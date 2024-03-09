@@ -16,18 +16,12 @@
   --font-size-base: 1rem;
   --font-weight-base: 400;
   --line-height-base: 1.25;
-}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --front-primary: rgb(60 60 67 / 92%);
-    --back-primary: #fff;
-  }
-}
+  --green-500: #1b8154;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --front-primary: rgb(255 255 255 / 92%);
-    --back-primary: #19191e;
-  }
+  --front-primary: rgb(60 60 67 / 92%);
+  --front-inverse: #fff;
+  --back-primary: #fff;
+
+  --brand-primary: var(--green-500);
 }

@@ -1,0 +1,25 @@
+@use "../../scss/breakpoints";
+@use "../../scss/mixins/button";
+
+.button {
+  $block-name: &; // #{$block-name}__element
+
+  @include button.button-reset;
+
+  position: relative;
+  padding: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.4;
+  border-radius: 6px;
+
+  &--primary {
+    color: var(--front-inverse);
+    background: var(--brand-primary);
+  }
+
+  &--secondary {
+    color: var(--brand-primary);
+    background: var(--color-white);
+  }
+}

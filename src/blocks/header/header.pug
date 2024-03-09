@@ -20,6 +20,66 @@ mixin header(mods)
     }
 
   header.header(class=allMods)&attributes(attributes)
-    .container
-      .header__inner Page header
-        block
+    .header__preloader
+      .header__preloader--bottom
+    .page__wrap
+      .page__flex
+        .header__box
+          a.page__link.logo(href="javascript: void(0);")
+            img.page__img(src= path.img + "logo.png", alt="")
+        .header__box
+          ul
+            li
+              a.page__link.header__box--link.show_menu(href="javascript: void(0);") Каталог техники
+              .header__box--catalog.menu_show
+                ul
+                  li
+                    a.page__link(href="javascript: void(0);")
+                      span Седельные тягачи
+                      span.header__box--catalog-numb 24
+                  li
+                    a.page__link(href="javascript: void(0);")
+                      span Полуприцепы шторные
+                      span.header__box--catalog-numb 27
+                  li
+                    a.page__link(href="javascript: void(0);")
+                      span Полуприцепы рефрижераторные
+                      span.header__box--catalog-numb 8
+                  li
+                    a.page__link(href="javascript: void(0);")
+                      span Мини-погрузчики
+                      span.header__box--catalog-numb 3
+                  li
+                    a.page__link(href="javascript: void(0);")
+                      span Фронтальные погрузчики
+                      span.header__box--catalog-numb 18
+                  li
+                    a.page__link(href="javascript: void(0);")
+                      span Экскаваторы
+                      span.header__box--catalog-numb 12
+                  li
+                    a.page__link(href="javascript: void(0);")
+                      span Самосвалы
+                      span.header__box--catalog-numb 18
+                  li
+                    a.page__link(href="javascript: void(0);")
+                      span Автобетоносмесители
+                      span.header__box--catalog-numb 7
+          nav.nav
+            ul
+              //-li: a.page__link.nav__link(href="#") Аренда
+              li: a.page__link.nav__link(href="#") Лизинг
+              li: a.page__link.nav__link(href="#") Акции
+              li: a.page__link.nav__link(href="#") Контакты
+              li: a.page__link.nav__link(href="#") О компании
+              li: a.page__link.nav__link(href="#") Вакансии
+              li: a.page__link.nav__link(href="#") Новости
+              li: a.page__link.nav__link(href="#") Акции
+          a.page__link.mobile_phone(href="tel:88007755997")
+            img.page__img(src="/assets/phone.svg", alt="")
+          a.page__link.header__burger(href="javascript: void(0);")
+            span
+        .header__box
+          .phone
+            a.page__link.phone__link(href="tel:88007755997") 8-800-775 59 97
+            //-.phone__city Казань

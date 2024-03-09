@@ -10,7 +10,7 @@ import { writePugMixinsFile } from "./writePugMixinsFile.js";
 import { writeSassImportsFile } from "./writeSassImportsFile.js";
 import { writeJsRequiresFile } from "./writeJsRequiresFile.js";
 import { compilePug, compilePugFast, recompilePug } from "./compilePug.js";
-import { compileSass } from "./compileSass.js";
+import { compileSass, refactorCSS } from "./compileSass.js";
 import { compileJs } from "./compileJs.js";
 import { compileJson } from "./compileJson.js";
 import { copySources, copyBlockImg } from "./copySources.js";
@@ -122,12 +122,13 @@ export function server() {
   // Global styles: all
   watch(
     [
+      `${config.from.style}/**/*.css`,
       `${config.from.style}/**/*.scss`,
       `${config.from.library}/scss/**/*.scss`,
       `!${config.from.style}/style.scss`,
     ],
     { events: ["all"], delay: 100 },
-    series(compileSass),
+    series(compileSass, refactorCSS),
   );
 
   // Global scripts: all
@@ -158,6 +159,7 @@ export function server() {
   // Copy sources: all
   watch(
     [
+      `${config.from.style}/**/*.css`,
       `${config.from.img}/**/*.{${config.fileFormats}}`,
       `${config.from.img}/favicon/**/*.*`,
       `${config.from.fonts}/**/*.*`,

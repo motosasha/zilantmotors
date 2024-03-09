@@ -21,6 +21,76 @@ mixin footer(text, mods)
     }
 
   footer.footer(class=allMods)&attributes(attributes)
-    .container
-      .footer__inner Page footer
-        block
+    .page__wrap
+      .footer__top
+        .page__flex
+          .footer__top--box
+            .phone
+              a.page__link.phone__link(href="tel:88007755997") 8 800 775-59-97
+              //-.phone__city Казань
+          .footer__top--box
+            .phone
+              a.page__link.phone__link(target="_blank", rel="noopener noreferrer", href="https://t.me/zilantmotors") @zilantmotors
+              .phone__city Telegram
+      .footer__middle
+        .footer__nav
+          .footer__nav--box
+            a.page__link.footer__nav--name(href="/catalog/") Каталог техники
+            ul
+              li
+                a.page__link.footer__nav--link(href="/catalog/sedelnye-tyagachi/")
+                  span Седельные тягачи
+                  span.footer__nav--numb 33
+              li
+                a.page__link.footer__nav--link(href="/catalog/polupricepy-shtornyy/")
+                  span Полуприцепы шторный
+                  span.footer__nav--numb 15
+              li
+                a.page__link.footer__nav--link(href="/catalog/polupritsepy-refrizheratornye/")
+                  span Полуприцепы рефрижераторные
+                  span.footer__nav--numb 8
+              li
+                a.page__link.footer__nav--link(href="/catalog/mini-pogruzchiki/")
+                  span Мини-погрузчики
+                  span.footer__nav--numb 3
+              li
+                a.page__link.footer__nav--link(href="/catalog/frontalnye-pogruzchiki/")
+                  span Фронтальные погрузчики
+                  span.footer__nav--numb 2
+              li
+                a.page__link.footer__nav--link(href="/catalog/ekskavatory/")
+                  span Экскаваторы
+                  span.footer__nav--numb 1
+              li
+                a.page__link.footer__nav--link(href="/catalog/samosvaly/")
+                  span Самосвалы
+                  span.footer__nav--numb 17
+              li
+                a.page__link.footer__nav--link(href="/catalog/avtobetonosmesiteli/")
+                  span Автобетоносмесители
+                  span.footer__nav--numb 7
+          .footer__nav--box
+            .footer__nav--name Нужен другой заголовок
+            ul
+              li
+                a.page__link.footer__nav--link(href="/lizing/")
+                  span Лизинг и кредит
+              li
+                a.page__link.footer__nav--link(href="/vacancy/")
+                  span Вакансии
+              li
+                a.page__link.footer__nav--link(href="/news/")
+                  span Новости
+              li
+                a.page__link.footer__nav--link(href="/about/")
+                  span О компании
+              li
+                a.page__link.footer__nav--link(href="/contacts/")
+                  span Контакты
+          .footer__nav--box(style="width: 100%; max-width: 400px;")
+            iframe(src="https://yandex.ru/map-widget/v1/?um=constructor%3A726938e2018c8acaabad09606d17262b7f0ef22b1eb3218a107456111748f329&source=constructor", width="100%", height="400", frameborder="0")
+      .footer__bottom
+        .page__flex
+          .copyright
+            | ©2011-2024
+            | ООО «КазанскаяТранспортнаяКомпания». Все права защищены

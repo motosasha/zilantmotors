@@ -3,7 +3,20 @@
 .header {
   $block-name: &; // #{$block-name}__element
 
-  &__inner {
-    padding: 8px 0;
+  &__box {
+    &:nth-child(3) {
+      display: none;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-d + 1) {
+    	&:first-child {
+        margin-right: 69px;
+      }
+
+      &:nth-child(3) {
+        display: block;
+        margin-left: auto;
+      }
+    }
   }
 }

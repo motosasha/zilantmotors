@@ -7,7 +7,7 @@ import { writePugMixinsFile } from "./gulp/writePugMixinsFile.js";
 import { writeSassImportsFile } from "./gulp/writeSassImportsFile.js";
 import { writeJsRequiresFile } from "./gulp/writeJsRequiresFile.js";
 import { compilePug, compilePugFast } from "./gulp/compilePug.js";
-import { compileSass } from "./gulp/compileSass.js";
+import { compileSass, refactorCSS } from "./gulp/compileSass.js";
 import { compileJs } from "./gulp/compileJs.js";
 import { compileJson } from "./gulp/compileJson.js";
 import { copySources, copyBlockImg } from "./gulp/copySources.js";
@@ -25,6 +25,7 @@ task("compile:jsRequires", writeJsRequiresFile);
 task("compile:pug", compilePug);
 task("compile:pugFast", compilePugFast);
 task("compile:sass", compileSass);
+task("compile:css", refactorCSS);
 task("compile:js", compileJs);
 task("compile:json", compileJson);
 task("compile:svgSprite", generateSvgSprite);
@@ -42,7 +43,7 @@ task("dev:log", function(cb) {
 task("default", series(
   parallel("dev:clear", "dev:graph"),
   parallel("compile:pugMixin", "compile:sassMixin", "compile:jsRequires", "compile:json"),
-  parallel("compile:pugFast", "compile:sass", "compile:js"),
+  parallel("compile:pugFast", "compile:sass", "compile:css", "compile:js"),
   parallel("copy:sources", "copy:blockImg", "compile:svgSprite"),
   "dev:log",
   server,

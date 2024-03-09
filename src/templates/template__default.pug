@@ -17,26 +17,18 @@ doctype html
 html(class="no-js", lang="ru")
   include ./template__default-head.pug
 
-  body
-    noscript У вас отключен JavaScript. Это пугает.
-
-    if isNav
+  body.loader
+    //-if isNav
       include ../service/project-nav.pug
 
-    if isLibrary
-      include ../library/blocks/library-trigger/library-trigger.pug
-
-    .page
-      .page__header
-        +header
-      .page__main
-        block content
-          .content-filler content-filler
-      .page__footer
-        +footer
+    +header
+    +menu
+    block content
+      .content-filler content-filler
+    +footer
 
     block templates
 
-    script(src= path.js + "bundle.js")
+    script(src= path.js + "script.js")
 
     block scripts

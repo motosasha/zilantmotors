@@ -1,0 +1,122 @@
+//- Все примеси в этом файле должны начинаться c имени блока (menu)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin menu(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +menu("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " menu--" + modsList[i].trim();
+      }
+    }
+
+  .menu(class=allMods)&attributes(attributes)
+    .menu__inner
+      block
+
+  .menu.page__position--full
+    .menu__overflow.page__position--full
+    .menu__inner
+      .menu__header
+        .page__wrap
+          .page__flex
+            .menu__header--box
+              a.page__link.logo(href="javscript: void(0);")
+                img.page__img(src="img/logo.png", alt="")
+              .phone
+                a.page__link.phone__link(href="javascript: void(0);") 8 (987) 230-00-10
+                .phone__city Казань
+            .menu__header--box
+              a.page__link.menu__close(href="javascript: void(0);")
+                span Закрыть
+                span.menu__close--icon: img.page__img(src="img/icon/close.svg", alt="")
+      .menu__container
+        .page__wrap
+          .menu__nav
+            .menu__nav--box
+              a.page__link.menu__nav--name(href="javascript: void(0);")
+                span Каталог техники
+              ul
+                li
+                  a.page__link.menu__nav--link(href="javascript: void(0);")
+                    .menu__nav--icon: img.page__img(src="img/icon/dumper.svg", alt="")
+                    span Самосвалы
+                    .menu__nav--numb 18
+                li
+                  a.page__link.menu__nav--link(href="javascript: void(0);")
+                    .menu__nav--icon: img.page__img(src="img/icon/dumper.svg", alt="")
+                    span Седельные тягачи
+                    .menu__nav--numb 24
+                li
+                  a.page__link.menu__nav--link(href="javascript: void(0);")
+                    .menu__nav--icon: img.page__img(src="img/icon/dumper.svg", alt="")
+                    span Полуприцепы
+                    .menu__nav--numb 27
+                li
+                  a.page__link.menu__nav--link(href="javascript: void(0);")
+                    .menu__nav--icon: img.page__img(src="img/icon/dumper.svg", alt="")
+                    span Легкий коммерческий транспорт
+                    .menu__nav--numb 18
+                li
+                  a.page__link.menu__nav--link(href="javascript: void(0);")
+                    .menu__nav--icon: img.page__img(src="img/icon/dumper.svg", alt="")
+                    span Автобусы
+                    .menu__nav--numb 12
+            .menu__nav--box
+              .menu__nav--name
+                | Услуги и сервис
+              ul
+                li
+                  a.page__link.menu__nav--link(href="javascript: void(0);")
+                    span Выкуп техники
+                li
+                  a.page__link.menu__nav--link(href="javascript: void(0);")
+                    span Аренда
+                li
+                  a.page__link.menu__nav--link(href="javascript: void(0);")
+                    span Записаться на сервис
+            .menu__nav--box
+              .menu__nav--name
+                | Способы оплаты
+              ul
+                li
+                  a.page__link.menu__nav--link(href="javascript: void(0);")
+                    span Лизинг и кредит
+            .menu__nav--box
+              .menu__nav--name Журнал
+              ul
+                li
+                  a.page__link.menu__nav--link(href="javascript: void(0);")
+                    span Новости
+                li
+                  a.page__link.menu__nav--link(href="javascript: void(0);")
+                    span Статьи
+            .menu__nav--box
+              .menu__nav--name Информация
+              ul
+                li
+                  a.page__link.menu__nav--link(href="javascript: void(0);")
+                    span О компании
+                li
+                  a.page__link.menu__nav--link(href="javascript: void(0);")
+                    span Акции
+                li
+                  a.page__link.menu__nav--link(href="javascript: void(0);")
+                    span Наши клиенты
+                li
+                  a.page__link.menu__nav--link(href="javascript: void(0);")
+                    span Контакты
+          .menu__container--block
+            .phone
+              a.page__link.phone__link(href="javascript: void(0);") 8 (987) 230-00-10
+              .phone__city Казань
+            a.page__link.page__btn.page__btn--current(href="javascript: void(0);") Оставить заявку

@@ -79,15 +79,21 @@ const toObj = {
     return `${this.root}${pathToPrefix}/assets`;
   },
   get fonts() {
-    return `${this.root}${pathToPrefix}/fonts`;
+    return `${this.root}${pathToPrefix}/font`;
   },
 };
 
 const sourcesObj = {
-  "src/img/**/*.*": toObj.img,
-  "src/favicon/**/*.*": toObj.img + "/favicon",
-  "src/assets/**/*.*": toObj.assets,
-  "src/fonts/**/*.*": toObj.fonts,
+  "src/img/**/*.*": [toObj.img, false],
+  "src/favicon/**/*.*": [toObj.root, false],
+  "src/assets/**/*.*": [toObj.assets, false],
+  "src/fonts/**/*.*": [toObj.fonts, false],
+  "src/scss/css/alertify.core.css": [toObj.root + "/css", true],
+  "src/scss/css/jquery.fancybox.min.css": [toObj.root + "/css", true],
+  "src/scss/css/grid/grid/_functions.css": [toObj.root + "/css/grid/grid/", true],
+  "src/scss/css/grid/grid/default-grid.css": [toObj.root + "/css/grid/grid/", true],
+  "src/js/scripts/**/*.*": [toObj.root + "/js", false],
+  "src/js/libs/**/*.*": [toObj.root + "/libs", false],
   // "node_modules/somePackage/images/*.{png,svg,jpg,jpeg}": toObj.img,
 };
 
@@ -107,21 +113,21 @@ export const config = {
       js: `./${htmlPathObj.js}js/`,
       css: `./${htmlPathObj.css}css/`,
       img: `./${htmlPathObj.img}img/`,
-      fonts: `./${htmlPathObj.fonts}fonts/`,
+      fonts: `./${htmlPathObj.fonts}font/`,
       get icon() {
         return `${this.img}svgSprite.svg#`;
       },
+      root: `/`,
     },
     style: {
       js: `./${cssPathObj.js}js/`,
       css: `./${cssPathObj.css}css/`,
       img: `./${cssPathObj.img}img`,
-      fonts: `../${cssPathObj.fonts}fonts/`,
+      fonts: `../${cssPathObj.fonts}font/`,
       get icon() {
         return `${this.img}svgSprite.svg#`;
       },
     },
-    pages: `/`,
   },
   // sources for copy
   sources: sourcesObj,
@@ -137,17 +143,17 @@ export const config = {
   blocksFromHtml: [],
   // style imports at start
   addStyleBefore: [
-    "sanitize.css/sanitize.css",
-    "sanitize.css/forms.css",
-    "sanitize.css/assets.css",
-    "sanitize.css/typography.css",
-    "sanitize.css/reduce-motion.css",
+    // "sanitize.css/sanitize.css",
+    // "sanitize.css/forms.css",
+    // "sanitize.css/assets.css",
+    // "sanitize.css/typography.css",
+    // "sanitize.css/reduce-motion.css",
     "src/scss/variables.scss",
-    "src/scss/reboot.scss",
+    // "src/scss/reboot.scss",
     // "src/scss/mixins.scss",
     // "src/scss/typography.scss",
     // "src/scss/vendor.scss",
-    "src/scss/fonts.scss",
+    // "src/scss/fonts.scss",
     // "src/scss/animations.scss"
     // "somePackage/dist/somePackage.css", // for "node_modules/somePackage/dist/somePackage.css",
   ],
@@ -159,11 +165,11 @@ export const config = {
   ],
   // js imports at end
   addJsAfter: [
-    "./script.js",
+    // "./script.js",
   ],
   // style sheets
   styleSheets: [
-    "src/scss/style.scss",
+    "src/scss/style-add.scss",
   ],
   // browserSync options
   serverOptions: {
@@ -187,7 +193,7 @@ export const config = {
   // px to rem properties
   pxToRem: ["font", "font-size", "line-height", "letter-spacing"],
   // svg attributes to be removed
-  removeSvgAttr: ["symbol:width", "symbol:height", "stroke-width"],
+  removeSvgAttr: ["symbol:width", "symbol:height"],
   // message
   doNotEditMsg:
     "\n ВНИМАНИЕ! Этот файл генерируется автоматически.\n Любые изменения этого файла будут потеряны при следующей компиляции.\n Любое изменение проекта без возможности компиляции ДОЛЬШЕ И ДОРОЖЕ в 2-5 раз.\n\n",
@@ -196,7 +202,7 @@ export const config = {
   blockRegexp: /[^\\/]+(?=\.[^.])/g,
   templateRegexp: /(?<=extends.*templates\/).*.pug/g,
   // strategy
-  strategy: "mobile-first", // ["mobile-first", "desktop-first"]
+  strategy: "desktop-first", // ["mobile-first", "desktop-first"]
   // env
   mode: process.env.MODE || "development",
   // img copy mode

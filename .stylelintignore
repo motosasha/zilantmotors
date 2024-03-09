@@ -1,4 +1,6 @@
 build/
 src/scss/*reboot.scss
 src/scss/*style.scss
+src/scss/*style-add.scss
 src/scss/*variables.scss
+src/css/

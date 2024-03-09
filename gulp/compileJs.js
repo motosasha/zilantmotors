@@ -33,7 +33,7 @@ export function compileJs() {
     ],
   }).then((bundle) => {
     return bundle.write({
-      file: `${config.to.js}/bundle.js`,
+      file: `${config.to.js}/script.js`,
       format: "esm",
       name: "bundle",
       sourcemap: config.mode === "development",

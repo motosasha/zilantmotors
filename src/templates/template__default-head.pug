@@ -1,44 +1,31 @@
 head
   meta(charset="utf-8")
-  meta(name="viewport", content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=3, minimum-scale=0.1")
-  meta(http-equiv="X-UA-Compatible", content="ie=edge")
+  meta(http-equiv="X-UA-Compatible", content="IE=edge")
+  meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
 
   if (process.env.MODE === "deploy")
     base(href= deployUrl)
 
-  meta(name="format-detection", content="telephone=no")
-  meta(name="format-detection", content="date=no")
-  meta(name="format-detection", content="address=no")
-  meta(name="format-detection", content="email=no")
-  meta(name="google", content="notranslate")
-  meta(name="HandheldFriendly", content="true")
-  meta(name="robots", content="index, follow")
-
-  //- fonts preload
-  link(rel="preload", href=path.fonts + "Inter-Regular.woff2", as="font", type="font/woff2", crossorigin="anonymous")
-
-  //- favicon
-  link(rel="icon", sizes="32x32", href=path.img + "favicon/favicon.ico")
-  link(rel="icon", type="image/svg+xml", href=path.img + "favicon/favicon.svg")
-  link(rel="apple-touch-icon", href=path.img + "favicon/apple-touch-icon.png")
-  link(rel="manifest", href=path.img + "favicon/site.webmanifest")
-  meta(name="theme-color", content="#000000")
-
-  //- open graph
-  meta(property="og:type", content="website")
-  meta(property="og:title", content="og:title")
-  meta(property="og:image", content= href = path.img + "favicon/apple-touch-icon-180x180.png")
-  meta(property="og:description", content="og:description")
-  meta(property="vk:image", content=href = path.img + "favicon/logo-vk.png")
-
   title= pageTitle
-
-  block meta
-    meta(name="description", content=metaDescription)
-    meta(name="keywords", content=metaKeywords)
+  link(rel="apple-touch-icon", sizes="180x180", href="/apple-touch-icon.png")
+  link(rel="icon", type="image/png", sizes="32x32", href="/favicon-32x32.png")
+  link(rel="icon", type="image/png", sizes="16x16", href="/favicon-16x16.png")
+  link(rel="manifest", href="/site.webmanifest")
+  link(rel="shortcut icon", type="image/x-icon", href=path.img + "favicon.ico")
+  link(rel="stylesheet", href=path.css + "style.css")
+  link(rel="stylesheet", href=path.css + "jquery.fancybox.min.css")
+  link(rel="stylesheet", href=path.css + "media.css")
+  link(rel="stylesheet", href=path.css + "alertify.core.css")
+  link(rel="stylesheet", href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+  script(src= path.root + "libs/jquery3.1/jquery3.1.min.js")
+  script(src= path.root + "libs/watchHeight/jquery.matchHeight.js")
+  script(src="//code.jquery.com/ui/1.12.1/jquery-ui.js")
+  script(src= path.root + "libs/slick.js/slick.min.js")
+  script(src= path.js + "jquery.fancybox.min.js")
+  script(src= path.js + "alertify.min.js")
+  script(src= path.js + "js.cookie.min.js")
+  script(src= path.js + "wow.js")
+  script(src= path.js + "normalize.js")
 
   block head
-    link(rel="stylesheet", href=path.css + "style.css")
-    if isLibrary
-      link(rel="stylesheet", href=path.css + "library.css")
-    script: include ../js/head-script.js
+    link(rel="stylesheet", href=path.css + "style-add.css")

@@ -35,7 +35,7 @@ export function writeSassImportsFile(cb) {
       styleImports += `@use '${src}';\n`;
     });
     styleImports += msg;
-    fs.writeFileSync(`${config.from.style}/style.scss`, styleImports);
+    fs.writeFileSync(`${config.from.style}/style-add.scss`, styleImports);
     console.log("---------- Write new style.scss");
     config.scssImportsList = newScssImportsList;
   }
