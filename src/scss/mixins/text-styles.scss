@@ -6,3 +6,21 @@
   font-size: 16px;
   line-height: 1;
 }
+
+@mixin field {
+  color: #6a6c72;
+  font-size: 16px;
+  line-height: 1.375;
+}
+
+@mixin input {
+  color: #6a6c72;
+  font-size: 16px;
+  line-height: 1.375;
+}
+
+@mixin textarea {
+  color: #6a6c72;
+  font-size: 16px;
+  line-height: 1.375;
+}

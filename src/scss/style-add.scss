@@ -6,10 +6,16 @@
  */
 
 @use 'src/scss/variables.scss';
+@use 'src/blocks/field/field.scss';
 @use 'src/blocks/footer/footer.scss';
+@use 'src/blocks/form/form.scss';
 @use 'src/blocks/header/header.scss';
 @use 'src/blocks/hero/hero.scss';
+@use 'src/blocks/input/input.scss';
 @use 'src/blocks/menu/menu.scss';
+@use 'src/blocks/modal/modal.scss';
+@use 'src/blocks/select/select.scss';
+@use 'src/blocks/textarea/textarea.scss';
 
 /*!*
  * ВНИМАНИЕ! Этот файл генерируется автоматически.

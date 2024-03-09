@@ -1,0 +1,48 @@
+@import "../../scss/mixins/text-styles";
+
+.input {
+  $block-name: &; // #{$block-name}__element
+
+  @include input;
+
+  height: 52px;
+  padding: 14px;
+  background: var(--back-primary);
+  border: 1px solid #ececec;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.25s ease-out, outline 0.25s ease-out;
+  appearance: none;
+
+  &::placeholder {
+    color: var(--front-secondary);
+  }
+
+  &--has-value,
+  &:focus {
+    border: 1px solid var(--brand-primary);
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    border: 1px solid var(--border-button);
+    -webkit-text-fill-color: var(--back-primary);
+    -webkit-box-shadow: none;
+  }
+
+  &[type="number"],
+  &[type="number"]::-webkit-inner-spin-button,
+  &[type="number"]::-webkit-outer-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+  }
+
+  &[type="search"]::-webkit-search-decoration,
+  &[type="search"]::-webkit-search-cancel-button,
+  &[type="search"]::-webkit-search-results-button,
+  &[type="search"]::-webkit-search-results-decoration {
+    display: none;
+  }
+}

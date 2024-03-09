@@ -122,10 +122,10 @@ export const config = {
     style: {
       js: `./${cssPathObj.js}js/`,
       css: `./${cssPathObj.css}css/`,
-      img: `./${cssPathObj.img}img`,
+      img: `../${cssPathObj.img}img`,
       fonts: `../${cssPathObj.fonts}font/`,
       get icon() {
-        return `${this.img}svgSprite.svg#`;
+        return `${this.img}/svgSprite.svg#`;
       },
     },
   },

@@ -1,0 +1,110 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - pageTitle = "Купить новый ТЯГАЧ SITRAK C7H 4×2 АКПП 480"
+  - metaDescription = "description"
+  - metaKeywords = "keywords"
+
+block content
+  main.main
+    .page__wrap
+      .breadcrumbs
+        ul
+          li
+            a.page__link.breadcrumbs__link(href="javascript: void(0);"): span Главная
+          li
+            a.page__link.breadcrumbs__link(href="javascript: void(0);"): span Каталог
+          li
+            a.page__link.breadcrumbs__link(href="javascript: void(0);"): span Седельные тягачи
+          li
+            a.page__link.breadcrumbs__link(href="javascript: void(0);"): span SITRAK C7H 4×2 АКПП 480
+      .card-product
+        .page__flex
+          .card-product__right
+            .card-product__right--slider
+              .card-product__right--slider-desc
+                a.page__link.card-product__right--big(href="javascript: void(0);")
+                  img.page__img(src="img/big-image.png", alt="")
+                a.page__link.card-product__right--big(href="javascript: void(0);")
+                  img.page__img(src="img/big-image.png", alt="")
+                a.page__link.card-product__right--big(href="javascript: void(0);")
+                  img.page__img(src="img/big-image.png", alt="")
+                a.page__link.card-product__right--big(href="javascript: void(0);")
+                  img.page__img(src="img/big-image.png", alt="")
+              ul
+                li
+                  a.page__link.card-product__right--layer(href="javascript: void(0);")
+                    img.page__img(src="img/small-image.png", alt="")
+                li
+                  a.page__link.card-product__right--layer(href="javascript: void(0);")
+                    img.page__img(src="img/small-image.png", alt="")
+                li
+                  a.page__link.card-product__right--layer(href="javascript: void(0);")
+                    img.page__img(src="img/small-image.png", alt="")
+                li
+                  a.page__link.card-product__right--layer(href="javascript: void(0);")
+                    img.page__img(src="img/small-image.png", alt="")
+                li
+                  a.page__link.card-product__right--layer(href="javascript: void(0);")
+                    img.page__img(src="img/small-image.png", alt="")
+                li.current
+                  a.page__link.card-product__right--layer(href="javascript: void(0);")
+                    img.page__img(src="img/small-image.png", alt="")
+                    span Еще <br> 8 фото
+          .card-product__left
+            .card-product__left--block
+              .card-product__left--indent
+                .card-product__title ТЯГАЧ SITRAK C7H MAX (C9H) 4×2 АКПП 480 (2023)
+                .card-product__left--subname Седельные тягачи, 480 л. с.
+                .card-product__left--desc
+                  ul
+                    li
+                      span Марка
+                      span 24
+                    li
+                      span Модель
+                      span C7H MAX (C9H)
+                    li
+                      span Год выпуска
+                      span 2023
+                    li
+                      span Мощность, л. с.
+                      span 460
+                hr.card-product__divider
+                .card-product__left--button
+                  button.page__link.page__btn.page__btn--current(data-hystmodal="#askForPrice") Узнать цену
+                  button.page__link.page__btn.page__btn--black(data-hystmodal="#leasingCalc") Рассчитать лизинг
+
+block templates
+  #askForPrice.hystmodal.modal(aria-hidden="true")
+    .hystmodal__wrap
+      .hystmodal__window.modal__window(role="dialog", aria-modal="true")
+        form#askForPriceForm.form
+          +field("text", "Ваше имя*", "", "", "afpName", "afpName")(require)
+          +field("phone", "Телефон*", "", "", "afpPhone", "afpPhone")(require)
+          +field("email", "Почта", "", "", "afpEmail", "afpEmail")
+          +field("textarea", "Дополнительные сведения", "", "", "afpMessage", "afpMessage")
+          button.page__link.page__btn.page__btn--current(type="submit") Оставить заявку
+  #leasingCalc.hystmodal.modal(aria-hidden="true")
+    .hystmodal__wrap
+      .hystmodal__window.modal__window(role="dialog", aria-modal="true")
+        form#leasingCalcForm.form
+          +field("text", "ИНН", "", "", "lcInn", "lcInn")
+          .form__row
+            +field("select", "Размер аванса", "", "", "lcPrepaid", "lcPrepaid", ['5%', '10%', '99%'])
+            +field("select", "Срок лизинга", "", "", "lcTerm", "lcTerm", ['5%', '10%', '99%'])
+          //(type, label, placeholder, mods, name, id, value, max)
+          button.page__link.page__btn.page__btn--current(type="submit") Оставить заявку
+        //
+          5%
+
+  #thanks.hystmodal.modal(aria-hidden="true")
+    .hystmodal__wrap
+      .hystmodal__window.modal__window(role="dialog", aria-modal="true")
+        .modal__message
+          h2.modal__title Спасибо за заявку!
+          p.modal__p В ближайшее время мы свяжемся с Вами
+
+block scripts
+  script(src= path.js + "script-add.js")

@@ -1,0 +1,25 @@
+@use "../../scss/breakpoints";
+@use "../../scss/mixins/text-styles";
+@use "../../scss/vendor/hystmodal.css";
+
+.modal {
+  $block-name: &; // #{$block-name}__element
+
+  &__window {
+    max-width: 90%;
+    padding: 30px;
+    border-radius: 6px;
+  }
+
+  &__title {
+    margin: 0;
+    color: var(--brand-primary);
+    line-height: 1.125;
+  }
+
+  &__p {
+    @include text-styles.body;
+
+    margin: 15px 0 0;
+  }
+}

@@ -98,7 +98,9 @@
   "dependencies": {
     "autosize": "^6.0.1",
     "imask": "^7.4.0",
-    "sanitize.css": "^13.0.0"
+    "just-validate": "^4.3.0",
+    "sanitize.css": "^13.0.0",
+    "tua-body-scroll-lock": "^1.4.1"
   },
   "husky": {
     "hooks": {
