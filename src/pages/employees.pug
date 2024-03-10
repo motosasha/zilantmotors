@@ -1,0 +1,64 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - pageTitle = "Сотрудники"
+  - metaDescription = "description"
+  - metaKeywords = "keywords"
+
+  -
+    var management = [
+      { title: "Зейнетдинов Ратмир", position: "Директор", image: 6 },
+      { title: "Андреев Кирилл", position: "Коммерческий директор", image: 5 },
+      { title: "Горюнов Сергей", position: "Директор по продажам", image: 4 },
+      { title: "Корнилов Сергей", position: "Директор", image: 3 },
+    ]
+    var accounting = [
+      { title: "Роза Михайловна", position: "Бухгалтерия", image: 2 },
+      { title: "Наталья", position: "Бухгалтерия", image: 1 },
+    ]
+    var pane = [
+      { title: "Имя Фамилия", position: "Должность", image: 5 },
+    ]
+
+block content
+  main.main
+    .page__wrap
+      .breadcrumbs
+        ul
+          li
+            a.page__link.breadcrumbs__link(href="javascript: void(0);"): span Главная
+          li
+            a.page__link.breadcrumbs__link(href="javascript: void(0);"): span Сотрудники
+    .employees-block
+      .page__wrap
+        h1.employees-block__title Сотрудники
+      .employees-block__tabs
+        .employees-block__scroll
+          .page__wrap
+            .employees-block__tabs-row
+              button.employees-block__tab.employees-block__tab--active(data-tab="management") Руководство
+              button.employees-block__tab(data-tab="accounting") Бухгалтерия
+              button.employees-block__tab(data-tab="sales") Отдел продаж техники
+              button.employees-block__tab(data-tab="spare") Отдел продаж запасных частей
+              button.employees-block__tab(data-tab="logistics") Отдел логистики
+        .page__wrap
+          .employees-block__content
+            #management.employees-block__pane.employees-block__pane--active
+              each tile in management
+                +employees-tile(tile)
+            #accounting.employees-block__pane
+              each tile in accounting
+                +employees-tile(tile)
+            #sales.employees-block__pane
+              each tile in pane
+                +employees-tile(tile)
+            #spare.employees-block__pane
+              each tile in pane
+                +employees-tile(tile)
+            #logistics.employees-block__pane
+              each tile in pane
+                +employees-tile(tile)
+
+block scripts
+  script(src= path.js + "script-add.js")

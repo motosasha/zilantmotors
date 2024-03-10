@@ -17,6 +17,11 @@
           "title": "About",
           "description": "о компании",
           "href": "about"
+        },
+        {
+          "title": "Employees",
+          "description": "сотрудники",
+          "href": "employees"
         }
       ]
     }

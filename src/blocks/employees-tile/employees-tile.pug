@@ -1,0 +1,26 @@
+//- Все примеси в этом файле должны начинаться c имени блока (employees-tile)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin employees-tile(data, mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +employees-tile("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " employees-tile--" + modsList[i].trim();
+      }
+    }
+
+  .employees-tile(class=allMods)&attributes(attributes)
+    img.employees-tile__image(src= path.img + "employees__person--0" + data.image + ".webp", alt=data.title)
+    .employees-tile__info
+      .employees-tile__title!= data.title
+      .employees-tile__position!= data.position

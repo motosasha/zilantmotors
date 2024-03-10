@@ -1,0 +1,93 @@
+@use "../../scss/breakpoints";
+@use "../../scss/mixins/button";
+
+.employees-block {
+  $block-name: &; // #{$block-name}__element
+
+  padding-bottom: 60px;
+  overflow: hidden;
+
+  &__title {
+    margin: 10px 0 30px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  &__tabs {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      top: 40px;
+      left: 0;
+      z-index: -1;
+      display: block;
+      width: 100vw;
+      height: 1px;
+      border-bottom: 1px solid #d6d6d6;
+      content: "";
+    }
+  }
+
+  &__scroll {
+    overflow: auto hidden;
+    scrollbar-width: none;
+
+    // stylelint-disable-next-line
+    .page__wrap {
+      padding: 0;
+
+      // stylelint-disable-next-line
+      @media screen and (min-width: 1240px) {
+        padding: 0 15px;
+      }
+    }
+  }
+
+  &__tabs-row {
+    display: flex;
+  }
+
+  &__tab {
+    @include button.button-reset;
+
+    padding: 8px 16px 6px;
+    color: #6a6c72;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.3334;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+
+    &--active {
+      color: #010101;
+      border-bottom: 2px solid var(--brand-primary);
+    }
+  }
+
+  &__pane {
+    display: none;
+    gap: 24px;
+    margin-top: 30px;
+
+    // stylelint-disable-next-line
+    @media screen and (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    // stylelint-disable-next-line
+    @media screen and (min-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    // stylelint-disable-next-line
+    @media screen and (min-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &--active {
+      display: grid;
+    }
+  }
+}
