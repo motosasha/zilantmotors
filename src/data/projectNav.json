@@ -22,6 +22,16 @@
           "title": "Employees",
           "description": "сотрудники",
           "href": "employees"
+        },
+        {
+          "title": "Vacancy",
+          "description": "вакансии",
+          "href": "vacancy"
+        },
+        {
+          "title": "News",
+          "description": "новости",
+          "href": "news"
         }
       ]
     }

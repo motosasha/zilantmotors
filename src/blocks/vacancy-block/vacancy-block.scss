@@ -1,0 +1,75 @@
+@use "../../scss/breakpoints";
+
+.vacancy-block {
+  $block-name: &; // #{$block-name}__element
+
+  padding-bottom: 60px;
+
+  &__grid {
+    display: grid;
+    gap: 24px;
+
+    // stylelint-disable-next-line
+    @media screen and (min-width: 992px) {
+    	grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__tile {
+    display: grid;
+    gap: 30px;
+    padding: 20px;
+    border: 1px solid #d6d6d6;
+    border-radius: 6px;
+
+    // stylelint-disable-next-line
+    @media screen and (min-width: 600px) {
+      grid-template-columns: auto 150px;
+    }
+  }
+
+  &__tile-title {
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 1.3158;
+  }
+
+  &__tile-p {
+    margin: 10px 0;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  &__tile-link {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: var(--brand-primary);
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.4;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__tile-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  &__tile-image {
+    display: none;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+
+    // stylelint-disable-next-line
+    @media screen and (min-width: 600px) {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - pageTitle = "Новости"
+  - metaDescription = "description"
+  - metaKeywords = "keywords"
+
+block content
+  main.main
+    .page__wrap.news-block
+      .breadcrumbs
+        ul
+          li
+            a.page__link.breadcrumbs__link(href="javascript: void(0);"): span Главная
+          li
+            a.page__link.breadcrumbs__link(href="javascript: void(0);"): span Новости
+      h1.page__title Новости
+      .news-block__grid
+        .news-block__tile
+          image.news-block__tile-image(src= path.img + "news__image.webp", alt="Грузовик Iveco")
+          .news-block__tile-inner
+            h2.news-block__tile-title Как это было. Отчетное видео с нашего мероприятия
+            p.news-block__tile-p.
+              Благодаря сотрудничеству с крупнейшими игроками на рынке Лизинга наша компания может предлагать
+              перспективные лизинговые программы, которые позволят субъектам малого и среднего бизнеса вывести
+              свою деятельность на новый уровень. Грузовой лизинг — это прекрасная возможность повысить
+              продуктивность бизнеса не изымая крупных денежных сумм из оборота предприятия,
+              а так же оптимизировать налоги и собственные расходы.
+            .news-block__tile-row
+              a.news-block__tile-link(href="#") Подробнее
+                svg.news-block__tile-icon
+                  use(href= path.icon + "icon__arrow--ext")
+              .news-block__tile-date 20 июня 2023
+        each tile in [1, 2, 3, 4]
+          .news-block__tile
+            image.news-block__tile-image(src= path.img + "news__image.webp", alt="Грузовик Iveco")
+            .news-block__tile-inner
+              h2.news-block__tile-title Как это было. Отчетное видео с нашего мероприятия
+              .news-block__tile-row
+                a.news-block__tile-link(href="#") Подробнее
+                  svg.news-block__tile-icon
+                    use(href= path.icon + "icon__arrow--ext")
+                .news-block__tile-date 20 июня 2023
