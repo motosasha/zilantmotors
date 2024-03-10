@@ -1,17 +1,24 @@
 @use "../../scss/breakpoints";
 
-.news-block {
+.another-news {
   $block-name: &; // #{$block-name}__element
 
-  padding-bottom: 60px;
+  padding: 40px 0 76px;
 
-  &__grid {
+  &__title {
+    margin: 0 0 20px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+  }
+
+  &__row {
     display: grid;
     gap: 24px;
 
     // stylelint-disable-next-line
     @media screen and (min-width: 600px) {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
     }
 
     // stylelint-disable-next-line

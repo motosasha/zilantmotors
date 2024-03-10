@@ -9,7 +9,7 @@
           "href": "index"
         },
         {
-          "title": "Product-card",
+          "title": "Product card",
           "description": "страница товара",
           "href": "product-card"
         },
@@ -32,6 +32,11 @@
           "title": "News",
           "description": "новости",
           "href": "news"
+        },
+        {
+          "title": "News post",
+          "description": "новость",
+          "href": "news-post"
         }
       ]
     }

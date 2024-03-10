@@ -1,0 +1,60 @@
+@use "../../scss/breakpoints";
+
+.article {
+  $block-name: &; // #{$block-name}__element
+
+  max-width: 856px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+
+  &__content {
+    display: grid;
+    justify-items: start;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    margin: 0 0 10px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.4
+  }
+
+  p + p {
+    margin-top: 15px;
+  }
+
+  a {
+    color: #06F;
+    font-size: 15px;
+    line-height: 1.4;
+    text-decoration: none;
+
+    + a {
+      margin-top: 5px;
+    }
+
+    p &,
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+}
