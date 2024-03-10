@@ -12,6 +12,11 @@
           "title": "Product-card",
           "description": "страница товара",
           "href": "product-card"
+        },
+        {
+          "title": "About",
+          "description": "о компании",
+          "href": "about"
         }
       ]
     }

@@ -1,0 +1,59 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - pageTitle = "Купить новый ТЯГАЧ SITRAK C7H 4×2 АКПП 480"
+  - metaDescription = "description"
+  - metaKeywords = "keywords"
+
+block content
+  main.main
+    section.about-hero
+      .about-hero__inner
+        .page__wrap
+          .about-hero__content
+            h1.about-hero__title О компании
+            p.about-hero__p.
+              ООО «КазанскаяТранспортнаяКомпания» является Официальным дилером марки SITRAK
+              и ведет деятельность по продаже новой европейской и китайской грузовой техники,
+              а так же техники с пробегом с 2011 года.
+            .about-hero__row
+              .about-hero__item
+                .about-hero__num 10
+                .about-hero__label филиалов
+              .about-hero__item
+                .about-hero__num 12 лет
+                .about-hero__label на рынке
+              .about-hero__item
+                .about-hero__num Более 1300
+                .about-hero__label единиц техники отгружено
+            button.page__link.page__btn.page__btn--current(data-hystmodal="#askForPrice") Оставить заявку
+      img.about-hero__bg(src=path.img + "about-hero__bg.webp", alt="Грузовик Scania едет по дороге, горы на фоне")
+  .main__block
+    .page__wrap
+      .about-grid
+        .about-grid__item
+          .about-grid__col
+            h2.about-grid__title Видение
+            p.about-grid__p.
+              Мы официальный дилер SITRAK и FAW, заслуживший доверие клиентов благодаря нашему стремлению
+              к качеству и надежности. Так же наша продукция включает в себя, такие известные бренды,
+              как Mercedes-Benz, FOTON, MAN, VOLVO, DAF, Renault, Scania, IVECO, DongFeng и SHACMAN.
+          .about-grid__col
+            img.about-grid__image(src=path.img + "about-grid__image.webp", alt="Грузовики на стоянке")
+        .about-grid__item.about-grid__item--reverse
+          .about-grid__col
+            h2.about-grid__title Видение
+            p.about-grid__p.
+              Мы официальный дилер SITRAK и FAW, заслуживший доверие клиентов благодаря нашему стремлению
+              к качеству и надежности. Так же наша продукция включает в себя, такие известные бренды,
+              как Mercedes-Benz, FOTON, MAN, VOLVO, DAF, Renault, Scania, IVECO, DongFeng и SHACMAN.
+          .about-grid__col
+            img.about-grid__image(src=path.img + "about-grid__image.webp", alt="Грузовики на стоянке")
+
+block templates
+  +modal
+  +modal-thanks
+
+block scripts
+  script(src= path.js + "script-add.js")

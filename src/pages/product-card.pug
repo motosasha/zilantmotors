@@ -77,34 +77,9 @@ block content
                   button.page__link.page__btn.page__btn--black(data-hystmodal="#leasingCalc") Рассчитать лизинг
 
 block templates
-  #askForPrice.hystmodal.modal(aria-hidden="true")
-    .hystmodal__wrap
-      .hystmodal__window.modal__window(role="dialog", aria-modal="true")
-        form#askForPriceForm.form
-          +field("text", "Ваше имя*", "", "", "afpName", "afpName")(require)
-          +field("phone", "Телефон*", "", "", "afpPhone", "afpPhone")(require)
-          +field("email", "Почта", "", "", "afpEmail", "afpEmail")
-          +field("textarea", "Дополнительные сведения", "", "", "afpMessage", "afpMessage")
-          button.page__link.page__btn.page__btn--current(type="submit") Оставить заявку
-  #leasingCalc.hystmodal.modal(aria-hidden="true")
-    .hystmodal__wrap
-      .hystmodal__window.modal__window(role="dialog", aria-modal="true")
-        form#leasingCalcForm.form
-          +field("text", "ИНН", "", "", "lcInn", "lcInn")
-          .form__row
-            +field("select", "Размер аванса", "", "", "lcPrepaid", "lcPrepaid", ['5%', '10%', '99%'])
-            +field("select", "Срок лизинга", "", "", "lcTerm", "lcTerm", ['5%', '10%', '99%'])
-          //(type, label, placeholder, mods, name, id, value, max)
-          button.page__link.page__btn.page__btn--current(type="submit") Оставить заявку
-        //
-          5%
-
-  #thanks.hystmodal.modal(aria-hidden="true")
-    .hystmodal__wrap
-      .hystmodal__window.modal__window(role="dialog", aria-modal="true")
-        .modal__message
-          h2.modal__title Спасибо за заявку!
-          p.modal__p В ближайшее время мы свяжемся с Вами
+  +modal
+  +modal-lc
+  +modal-thanks
 
 block scripts
   script(src= path.js + "script-add.js")

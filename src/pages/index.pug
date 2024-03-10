@@ -14,7 +14,7 @@ block content
           .hero__content
             h1.hero__title Надежная техника для сложных задач
             .hero__row
-              a.page__link.page__btn.page__btn--current(href="#") Рассчитать лизинг
+              button.page__link.page__btn.page__btn--current(data-hystmodal="#leasingCalc") Рассчитать лизинг
               a.page__link.page__btn.page__btn--white(href="#") Подробнее
       img.hero__bg(src=path.img + "hero__bg.webp", alt="Грузовик Scania едет по дороге, горы на фоне")
   .main__block
@@ -206,9 +206,9 @@ block content
                     .payment-method__desc от 0%
                       .payment-method__desc--subname аванс
                     .payment-method__desc до 60 мес.
-                      .payment-method__desc--subname срок договороа
+                      .payment-method__desc--subname срок договора
                   .payment-method__box--button
-                    a.page__link.page__btn.page__btn--black(href="javascript: void(0);") Рассчитать
+                    button.page__link.page__btn.page__btn--black(data-hystmodal="#leasingCalc") Рассчитать
                     a.page__link.page__btn.page__btn--transparent(href="javascript: void(0);") Консультация
         .cooperation
           h2.page__h2.mt-0.mb-0 Наши партнеры
@@ -262,3 +262,10 @@ block content
                   .why__desc--subname финансирование
               .why__text.wow.fadeInUp(data-wow-duration=".7s", data-wow-delay="1.2s")
                 p Профессиональная консультация по всем вопросам, широкий выбор техники, предложим лучшее финансирование, выгодно для вас сдадим в аренду новую технику, выкупим вашу технику
+
+block templates
+  +modal-lc
+  +modal-thanks
+
+block scripts
+  script(src= path.js + "script-add.js")

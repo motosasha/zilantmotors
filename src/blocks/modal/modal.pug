@@ -7,7 +7,7 @@ mixin modal(mods)
   //- Принимает:
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +modal("some-mod")
+        +modal-afp("some-mod")
 
   //- список модификаторов
   -
@@ -19,6 +19,65 @@ mixin modal(mods)
       }
     }
 
-  .modal(class=allMods)&attributes(attributes)
-    .modal__inner
-      block
+  #askForPrice.hystmodal.modal(class=allMods)&attributes(attributes)
+    .hystmodal__wrap
+      .hystmodal__window.modal__window(role="dialog", aria-modal="true")
+        form#askForPriceForm.form
+          +field("text", "Ваше имя*", "", "", "afpName", "afpName")(require)
+          +field("phone", "Телефон*", "", "", "afpPhone", "afpPhone")(require)
+          +field("email", "Почта", "", "", "afpEmail", "afpEmail")
+          +field("textarea", "Дополнительные сведения", "", "", "afpMessage", "afpMessage")
+          button.page__link.page__btn.page__btn--current(type="submit") Оставить заявку
+
+
+mixin modal-lc(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +modal-lc("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " modal--" + modsList[i].trim();
+      }
+    }
+
+  #leasingCalc.hystmodal.modal(aria-hidden="true")
+    .hystmodal__wrap
+      .hystmodal__window.modal__window(role="dialog", aria-modal="true")
+        form#leasingCalcForm.form
+          +field("text", "ИНН", "", "", "lcInn", "lcInn")
+          .form__row
+            +field("select", "Размер аванса", "", "", "lcPrepaid", "lcPrepaid", ['5%', '10%', '99%'])
+            +field("select", "Срок лизинга", "", "", "lcTerm", "lcTerm", ['5%', '10%', '99%'])
+          button.page__link.page__btn.page__btn--current(type="submit") Оставить заявку
+
+
+mixin modal-thanks(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +modal-thanks("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " modal--" + modsList[i].trim();
+      }
+    }
+
+  #thanks.hystmodal.modal(aria-hidden="true")
+    .hystmodal__wrap
+      .hystmodal__window.modal__window(role="dialog", aria-modal="true")
+        .modal__message
+          h2.modal__title Спасибо за заявку!
+          p.modal__p В ближайшее время мы свяжемся с Вами
