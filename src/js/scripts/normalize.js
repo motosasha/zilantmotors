@@ -119,7 +119,8 @@ $(function () {
   wow.init();
 
   setTimeout(function () {
-    $("body").removeClass("loader");
+    document.body.classList.remove("loader");
+    //$("body").removeClass("loader");
   }, 2100);
 
   if ($(".header__preloader").is("div")) {
