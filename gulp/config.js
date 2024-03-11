@@ -117,7 +117,7 @@ export const config = {
       get icon() {
         return `${this.img}svgSprite.svg#`;
       },
-      root: `/`,
+      root: `./`,
     },
     style: {
       js: `./${cssPathObj.js}js/`,

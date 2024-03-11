@@ -40,11 +40,13 @@ ready(function () {
     modals.open("#thanks");
   };
 
-  const askForPriceFormValidate = new JustValidate("#askForPriceForm", undefined, ruDict);
-  const leasingCalcFormValidate = new JustValidate("#leasingCalcForm", undefined, ruDict);
+  const askForPriceForm = document.querySelector("#askForPriceForm");
+  const leasingCalcForm = document.querySelector("#leasingCalcForm");
 
-  askForPriceFormValidate.setCurrentLocale("ru");
-  askForPriceFormValidate
+  if (askForPriceForm) {
+    const askForPriceFormValidate = new JustValidate("#askForPriceForm", undefined, ruDict);
+    askForPriceFormValidate.setCurrentLocale("ru");
+    askForPriceFormValidate
     .addField("#afpName", [
       {
         rule: "required",
@@ -82,17 +84,22 @@ ready(function () {
         errorMessage: "Value is incorrect",
       },
     ]);
+  }
 
-  leasingCalcFormValidate.setCurrentLocale("ru");
-  leasingCalcFormValidate.addField("#lcInn", [
-    {
-      rule: "required",
-      errorMessage: "Value is required",
-    },
-    {
-      rule: "customRegexp",
-      value: /^(([0-9]{12})|([0-9]{10}))?$/gi,
-      errorMessage: "Value is incorrect",
-    },
-  ]);
+  if (leasingCalcForm) {
+    const leasingCalcFormValidate = new JustValidate("#leasingCalcForm", undefined, ruDict);
+
+    leasingCalcFormValidate.setCurrentLocale("ru");
+    leasingCalcFormValidate.addField("#lcInn", [
+      {
+        rule: "required",
+        errorMessage: "Value is required",
+      },
+      {
+        rule: "customRegexp",
+        value: /^(([0-9]{12})|([0-9]{10}))?$/gi,
+        errorMessage: "Value is incorrect",
+      },
+    ]);
+  }
 });

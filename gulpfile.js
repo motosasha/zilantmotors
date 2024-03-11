@@ -52,7 +52,7 @@ task("default", series(
 task("build", series(
   parallel("dev:clear", "dev:graph"),
   parallel("compile:pugMixin", "compile:sassMixin", "compile:jsRequires", "compile:json"),
-  parallel("compile:pugFast", "compile:sass", "compile:js"),
+  parallel("compile:pugFast", "compile:sass", "compile:css", "compile:js"),
   parallel("copy:sources", "copy:blockImg", "compile:svgSprite"),
   "dev:log",
 ));
@@ -60,7 +60,7 @@ task("build", series(
 task("deploy", series(
   parallel("dev:clear", "dev:graph"),
   parallel("compile:pugMixin", "compile:sassMixin", "compile:jsRequires", "compile:json"),
-  parallel("compile:pugFast", "compile:sass", "compile:js"),
+  parallel("compile:pugFast", "compile:sass", "compile:css", "compile:js"),
   parallel("copy:sources", "copy:blockImg", "compile:svgSprite"),
   "dev:deploy"
 ));
