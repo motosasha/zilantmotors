@@ -8,23 +8,62 @@ block variables
 
 block content
   main.main
-    .page__wrap.vacancy-block
+    .page__wrap
       .breadcrumbs
         ul
           li
             a.page__link.breadcrumbs__link(href="javascript: void(0);"): span Главная
           li
             a.page__link.breadcrumbs__link(href="javascript: void(0);"): span Вакансии
-      h1.page__title Вакансии
-      .vacancy-block__grid
-        each tile in [1, 2, 3, 4]
-          .vacancy-block__tile
-            .vacancy-block__tile-inner
-              h2.vacancy-block__tile-title Разработчик платформы данных в Yandex
-              p.vacancy-block__tile-p.
-                Без баз данных не обходится ни один проект, сервис или информационная система.
-                Мы ищем человека, который будет заниматься развитием инфраструктуры вокруг популярных открытых СУБД
-              a.vacancy-block__tile-link(href="#") Подробнее
-                svg.vacancy-block__tile-icon
-                  use(href= path.icon + "icon__arrow--ext")
-            image.vacancy-block__tile-image(src= path.img + "vacancy__image.webp", alt="Человек за компьютером")
+          li
+            a.page__link.breadcrumbs__link(href="javascript: void(0);"): span Разработчик платформы данных в Yandex Cloud
+      .vacancy-post
+        h1.vacancy-post__title Разработчик платформы данных в Yandex Cloud
+        a.page__link.page__btn.page__btn--current.vacancy-post__button(href="#vacancyForm") Откликнуться
+        .vacancy-post__article
+          p.
+            Без баз данных не обходится ни один проект, сервис или информационная система. Мы ищем
+            человека, который будет заниматься развитием инфраструктуры вокруг популярных открытых СУБД
+            для использования в высокой нагрузкой и доступностью.
+          h2 Какие задачи вас ждут
+          ul
+            li.
+              улучшать сервис управления базами данных, который упрощает сложное обслуживание базы, эксплуатацию
+              stateful-частей информационных систем и снижает вероятность инцидентов;
+            li.
+              разрабатывать компоненты взаимодействия ОС с системами мониторинга, подсистемы отказоустойчивости
+              и резервного копирования и многое другое;
+            li участвовать в доработках ядра СУБД.
+          h2 Мы ждем, что вы
+          ul
+            li.
+              имеете хорошее представление об устройстве хотя бы одной из СУБД: ClickHouse, Greenplum, MongoDB,
+              MySQL, PostgresSQL, SQL Server, Redis;
+            li обладаете практическим опытом программирования в POSIX-окружении;
+            li отлично знаете один или несколько языков программирования из списка: C++, Go, Java, Python;
+            li проектировали отказоустойчивые сервисы;
+            li способны писать надежный код, исследовать сложные проблемы, работать в команде.
+          h2 Будет плюсом, если вы
+          ul
+            li имеете опыт доработки открытых СУБД, open source-инфраструктуры баз, драйверов, конфигураторов, систем мониторинга.
+        form#vacancyForm.vacancy-form
+          h2.vacancy-form__title Расскажите нам о себе
+          .vacancy-form__row
+            +field("text", "Ваше имя", "", "", "vacancyName", "vacancyName")(require)
+            +field("text", "Ваша фамилия", "", "", "vacancyLastName", "vacancyLastName")(require)
+          .vacancy-form__row
+            +field("phone", "Телефон", "", "", "vacancyPhone", "vacancyPhone")(require)
+            +field("email", "Email", "", "", "vacancyEmail", "vacancyEmail")(require)
+          +field("textarea", "Дополнительные сведения", "", "", "vacancyMessage", "vacancyMessage")
+          .vacancy-form__row
+            +field("text", "Ссылка на резюме", "", "", "vacancyLink", "vacancyLink")
+            input(type="file", id="vacancyFile", name="vacancyFile")
+          .field
+            +checkbox("Я согласен с условиями передачи и обработки данных", "", "vacancyCheck", "vacancyCheck")(require)
+          button.page__link.page__btn.page__btn--current(type="submit") Отправить
+
+block templates
+  +modal-thanks
+
+block scripts
+  script(src= path.js + "script-add.js")

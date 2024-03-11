@@ -1,0 +1,62 @@
+@import "../../scss/mixins/text-styles";
+
+.checkbox {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  display: flex;
+  gap: 8px;
+  justify-self: start;
+
+  // stylelint-disable-next-line
+  .field & {
+    margin-bottom: 4px;
+  }
+
+  &__input {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+  }
+
+  &__fake-input {
+    width: 20px;
+    height: 20px;
+    background: var(--back-primary);
+    border: 1px solid #ececec;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.125s ease;
+
+    &::after {
+      display: block;
+      width: 10px;
+      height: 6px;
+      margin:5px 4px;
+      border: 2px solid transparent;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      transition: border-color 0.125s ease;
+      content: "";
+    }
+  }
+
+  &__input:checked + &__fake-input {
+    background: var(--brand-primary);
+  }
+
+  &__input:checked + &__fake-input::after {
+    border-color: var(--front-inverse);
+  }
+
+  &__label {
+    color: #6a6c72;
+    font-size: 14px;
+    line-height: 1.4286;
+    letter-spacing: -0.14px;
+    cursor: pointer;
+    user-select: none;
+  }
+}

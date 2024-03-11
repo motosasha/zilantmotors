@@ -1,0 +1,85 @@
+@use "../../scss/breakpoints";
+@use "filepond/dist/filepond.min.css";
+
+.vacancy-form {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  gap: 20px;
+
+  &__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+  }
+
+  &__row {
+    display: grid;
+    gap: 24px;
+
+    &:not(:first-of-type) {
+      margin-top: 4px;
+    }
+
+    // stylelint-disable-next-line
+    @media screen and (min-width: 600px) {
+    	grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  button {
+    justify-self: start;
+    margin-top: 20px;
+  }
+
+  // stylelint-disable
+  .filepond--root {
+    height: 52px;
+    margin: 0;
+    font-family: 'Proxima Nova', sans-serif;
+
+    @media screen and (min-width: 600px) {
+      margin: 30px 0 0;
+    }
+
+    .filepond--drop-label {
+      min-height: 52px;
+      cursor: pointer;
+
+      label {
+        padding: 0;
+        color: #6a6c72;
+        font-size: 16px;
+        line-height: 1.375;
+      }
+
+      span {
+        color: #010101;
+      }
+    }
+
+    .filepond--credits {
+      display: none;
+    }
+
+    .filepond--list-scroller {
+      margin: 4px 0;
+
+      &[data-state="overflow"] {
+        mask: none;
+      }
+    }
+
+    .filepond--item {
+      margin: 4px;
+    }
+
+    .filepond--panel-root {
+      background-color: transparent;
+      border: 1px dashed var(--brand-primary);
+      border-radius: 6px;
+    }
+  }
+  // stylelint-enable
+}

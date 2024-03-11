@@ -1,0 +1,76 @@
+@use "../../scss/breakpoints";
+
+.vacancy-post {
+  $block-name: &; // #{$block-name}__element
+
+  max-width: 856px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+
+  &__title {
+    margin: 10px 0 20px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  &__article {
+    margin: 40px 0 80px;
+  }
+
+  h2 {
+    margin: 0 0 10px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.4
+  }
+
+  p + p {
+    margin-top: 15px;
+  }
+
+  a {
+    color: #06F;
+    font-size: 15px;
+    line-height: 1.4;
+    text-decoration: none;
+
+    + a {
+      margin-top: 5px;
+    }
+
+    p &,
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+
+    li {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+  }
+
+  &__button[href] {
+    color: var(--front-inverse);
+    text-decoration: none !important;
+
+    &:hover {
+      color: var(--brand-primary);
+    }
+  }
+}
