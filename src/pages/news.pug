@@ -8,37 +8,38 @@ block variables
 
 block content
   main.main
-    .page__wrap.news-block
+    .page__wrap
       .breadcrumbs
         ul
           li
             a.page__link.breadcrumbs__link(href="javascript: void(0);"): span Главная
           li
             a.page__link.breadcrumbs__link(href="javascript: void(0);"): span Новости
-      h1.page__title Новости
-      .news-block__grid
-        .news-tile
-          image.news-tile__image(src= path.img + "news__image.webp", alt="Грузовик Iveco")
-          .news-tile__inner
-            h2.news-tile__title Как это было. Отчетное видео с нашего мероприятия
-            p.news-tile__p.
-              Благодаря сотрудничеству с крупнейшими игроками на рынке Лизинга наша компания может предлагать
-              перспективные лизинговые программы, которые позволят субъектам малого и среднего бизнеса вывести
-              свою деятельность на новый уровень. Грузовой лизинг — это прекрасная возможность повысить
-              продуктивность бизнеса не изымая крупных денежных сумм из оборота предприятия,
-              а так же оптимизировать налоги и собственные расходы.
-            .news-tile__row
-              a.news-tile__link(href="#") Подробнее
-                svg.news-tile__icon
-                  use(href= path.icon + "icon__arrow--ext")
-              .news-tile__date 20 июня 2023
-        each tile in [1, 2, 3, 4]
+      .news-block
+        h1.page__title Новости
+        .news-block__grid
           .news-tile
             image.news-tile__image(src= path.img + "news__image.webp", alt="Грузовик Iveco")
             .news-tile__inner
               h2.news-tile__title Как это было. Отчетное видео с нашего мероприятия
+              p.news-tile__p.
+                Благодаря сотрудничеству с крупнейшими игроками на рынке Лизинга наша компания может предлагать
+                перспективные лизинговые программы, которые позволят субъектам малого и среднего бизнеса вывести
+                свою деятельность на новый уровень. Грузовой лизинг — это прекрасная возможность повысить
+                продуктивность бизнеса не изымая крупных денежных сумм из оборота предприятия,
+                а так же оптимизировать налоги и собственные расходы.
               .news-tile__row
                 a.news-tile__link(href="#") Подробнее
                   svg.news-tile__icon
                     use(href= path.icon + "icon__arrow--ext")
                 .news-tile__date 20 июня 2023
+          each tile in [1, 2, 3, 4]
+            .news-tile
+              image.news-tile__image(src= path.img + "news__image.webp", alt="Грузовик Iveco")
+              .news-tile__inner
+                h2.news-tile__title Как это было. Отчетное видео с нашего мероприятия
+                .news-tile__row
+                  a.news-tile__link(href="#") Подробнее
+                    svg.news-tile__icon
+                      use(href= path.icon + "icon__arrow--ext")
+                  .news-tile__date 20 июня 2023

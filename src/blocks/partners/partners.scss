@@ -1,0 +1,50 @@
+@use "../../scss/breakpoints";
+
+.partners {
+  $block-name: &; // #{$block-name}__element
+
+  padding: 3.125em 0;
+
+  &__block {
+    padding-top: 2.3125em;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+
+    @media screen and (min-width: 576px) {
+      & {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    @media screen and (min-width: 992px) {
+      & {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      & {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+  }
+
+  &__icon {
+    transition: all .5s ease 0s
+  }
+
+  &__icon img {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+  }
+
+  &__icon:hover {
+    filter: grayscale(0.5);
+  }
+}

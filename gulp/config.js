@@ -149,7 +149,7 @@ export const config = {
     // "sanitize.css/typography.css",
     // "sanitize.css/reduce-motion.css",
     "src/scss/variables.scss",
-    // "src/scss/reboot.scss",
+    "src/scss/reboot.scss",
     // "src/scss/mixins.scss",
     // "src/scss/typography.scss",
     // "src/scss/vendor.scss",

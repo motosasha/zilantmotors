@@ -17,12 +17,12 @@ block content
               button.page__link.page__btn.page__btn--current(data-hystmodal="#leasingCalc") Рассчитать лизинг
               a.page__link.page__btn.page__btn--white(href="#") Подробнее
       img.hero__bg(src=path.img + "hero__bg.webp", alt="Грузовик Scania едет по дороге, горы на фоне")
-  .main__block
-    .page__wrap
-      .sentence
-        .sentence__block
-          a.page__link.sentence__link(href="javascript: void(0);")
-            span Каталог техники
+    .main__block
+      .page__wrap
+        .sentence
+          .sentence__head
+            a.page__link.sentence__link(href="javascript: void(0);")
+              span Каталог техники
           .sentence__grid
             each box in [1, 2, 3, 4, 5]
               .sentence__box
@@ -77,68 +77,66 @@ block content
                         .page__flex
                           .price 8 200 000 #[span.page__rubl]
                             .price__from от 45 020 #[span.page__rubl] /мес
-      .main__block--catalog
-        h2.page__h2.mt-0.mb-0 Каталог техники
-        .main__block--catalog-indent
-          .page__flex
-            .box.wow.fadeInUp(data-wow-duration=".7s")
-              a.page__link.box__block(href="javascript: void(0);")
-                .box__block--icon
-                  img.page__img.img-act(src="img/icon__catalog--sed.webp", alt="")
-                  img.page__img.no-img(src="img/icon__catalog--sed-white.webp", alt="")
-                .box__block--text Седельные тягачи
-                  span 4
-            .box.wow.fadeInUp(data-wow-duration=".7s", data-wow-delay=".3s")
-              a.page__link.box__block(href="javascript: void(0);")
-                .box__block--icon
-                  img.page__img.img-act(src="img/icon__catalog--polu.webp", alt="")
-                  img.page__img.no-img(src="img/icon__catalog--polu-white.webp", alt="")
-                .box__block--text Полуприцепы шторный
-                  span 1
-            .box.wow.fadeInUp(data-wow-duration=".7s", data-wow-delay=".5s")
-              a.page__link.box__block(href="javascript: void(0);")
-                .box__block--icon
-                  img.page__img.img-act(src="img/icon__catalog--refr.webp", alt="")
-                  img.page__img.no-img(src="img/icon__catalog--refr-white.webp", alt="")
-                .box__block--text Полуприцепы рефрижераторные
-                  span 3
-            .box.wow.fadeInUp(data-wow-duration=".7s", data-wow-delay=".7s")
-              a.page__link.box__block(href="javascript: void(0);")
-                .box__block--icon
-                  img.page__img.img-act(src="img/icon__catalog--mini.webp", alt="")
-                  img.page__img.no-img(src="img/icon__catalog--mini-white.webp", alt="")
-                .box__block--text Мини-погрузчики
-                  span 1
-            .box.wow.fadeInUp(data-wow-duration=".7s", data-wow-delay=".9s")
-              a.page__link.box__block(href="javascript: void(0);")
-                .box__block--icon
-                  img.page__img.img-act(src="img/icon__catalog--front.webp", alt="")
-                  img.page__img.no-img(src="img/icon__catalog--front-white.webp", alt="")
-                .box__block--text Фронтальные погрузчики
-                  span 0
-            .box.wow.fadeInUp(data-wow-duration=".7s", data-wow-delay="1.1s")
-              a.page__link.box__block(href="javascript: void(0);")
-                .box__block--icon
-                  img.page__img.img-act(src="img/icon__catalog--exc.webp", alt="")
-                  img.page__img.no-img(src="img/icon__catalog--exc-white.webp", alt="")
-                .box__block--text Экскаваторы
-                  span 12
-            .box.wow.fadeInUp(data-wow-duration=".7s", data-wow-delay="1.1s")
-              a.page__link.box__block(href="javascript: void(0);")
-                .box__block--icon
-                  img.page__img.img-act(src="img/icon__catalog--samo.webp", alt="")
-                  img.page__img.no-img(src="img/icon__catalog--samo-white.webp", alt="")
-                .box__block--text Самосвалы
-                  span 12
-            .box.wow.fadeInUp(data-wow-duration=".7s", data-wow-delay="1.1s")
-              a.page__link.box__block(href="javascript: void(0);")
-                .box__block--icon
-                  img.page__img.img-act(src="img/icon__catalog--auto.webp", alt="")
-                  img.page__img.no-img(src="img/icon__catalog--auto-white.webp", alt="")
-                .box__block--text Автобетоносмесители
-                  span 12
-    .main__block
-      .page__wrap
+        .main__block--catalog
+          h2.page__h2.mt-0.mb-0 Каталог техники
+          .main__block--catalog-indent
+            .page__flex
+              .box.wow.fadeInUp(data-wow-duration=".7s")
+                a.page__link.box__block(href="javascript: void(0);")
+                  .box__block--icon
+                    img.page__img.img-act(src="img/icon__catalog--sed.webp", alt="")
+                    img.page__img.no-img(src="img/icon__catalog--sed-white.webp", alt="")
+                  .box__block--text Седельные тягачи
+                    span 4
+              .box.wow.fadeInUp(data-wow-duration=".7s", data-wow-delay=".3s")
+                a.page__link.box__block(href="javascript: void(0);")
+                  .box__block--icon
+                    img.page__img.img-act(src="img/icon__catalog--polu.webp", alt="")
+                    img.page__img.no-img(src="img/icon__catalog--polu-white.webp", alt="")
+                  .box__block--text Полуприцепы шторный
+                    span 1
+              .box.wow.fadeInUp(data-wow-duration=".7s", data-wow-delay=".5s")
+                a.page__link.box__block(href="javascript: void(0);")
+                  .box__block--icon
+                    img.page__img.img-act(src="img/icon__catalog--refr.webp", alt="")
+                    img.page__img.no-img(src="img/icon__catalog--refr-white.webp", alt="")
+                  .box__block--text Полуприцепы рефрижераторные
+                    span 3
+              .box.wow.fadeInUp(data-wow-duration=".7s", data-wow-delay=".7s")
+                a.page__link.box__block(href="javascript: void(0);")
+                  .box__block--icon
+                    img.page__img.img-act(src="img/icon__catalog--mini.webp", alt="")
+                    img.page__img.no-img(src="img/icon__catalog--mini-white.webp", alt="")
+                  .box__block--text Мини-погрузчики
+                    span 1
+              .box.wow.fadeInUp(data-wow-duration=".7s", data-wow-delay=".9s")
+                a.page__link.box__block(href="javascript: void(0);")
+                  .box__block--icon
+                    img.page__img.img-act(src="img/icon__catalog--front.webp", alt="")
+                    img.page__img.no-img(src="img/icon__catalog--front-white.webp", alt="")
+                  .box__block--text Фронтальные погрузчики
+                    span 0
+              .box.wow.fadeInUp(data-wow-duration=".7s", data-wow-delay="1.1s")
+                a.page__link.box__block(href="javascript: void(0);")
+                  .box__block--icon
+                    img.page__img.img-act(src="img/icon__catalog--exc.webp", alt="")
+                    img.page__img.no-img(src="img/icon__catalog--exc-white.webp", alt="")
+                  .box__block--text Экскаваторы
+                    span 12
+              .box.wow.fadeInUp(data-wow-duration=".7s", data-wow-delay="1.1s")
+                a.page__link.box__block(href="javascript: void(0);")
+                  .box__block--icon
+                    img.page__img.img-act(src="img/icon__catalog--samo.webp", alt="")
+                    img.page__img.no-img(src="img/icon__catalog--samo-white.webp", alt="")
+                  .box__block--text Самосвалы
+                    span 12
+              .box.wow.fadeInUp(data-wow-duration=".7s", data-wow-delay="1.1s")
+                a.page__link.box__block(href="javascript: void(0);")
+                  .box__block--icon
+                    img.page__img.img-act(src="img/icon__catalog--auto.webp", alt="")
+                    img.page__img.no-img(src="img/icon__catalog--auto-white.webp", alt="")
+                  .box__block--text Автобетоносмесители
+                    span 12
         .payment-method
           h2.page__h2.mt-0.mb-0 Способ оплаты
           .payment-method__block
@@ -159,9 +157,9 @@ block content
                   .payment-method__box--button
                     button.page__link.page__btn.page__btn--black(data-hystmodal="#leasingCalc") Рассчитать
                     a.page__link.page__btn.page__btn--transparent(href="javascript: void(0);") Консультация
-        .cooperation
+        .partners
           h2.page__h2.mt-0.mb-0 Наши партнеры
-          .cooperation__block
+          .partners__block
             -
               var partners = [
                 "lising-trade",
@@ -183,9 +181,9 @@ block content
                 "stone-xxi",
                 "sovkom-bank",
               ]
-            .cooperation__grid
+            .partners__grid
               each icon in partners
-                .cooperation__icon
+                .partners__icon
                   img.page__img(src="img/icon__partner--" + icon + ".webp", alt="")
       .why
         .page__wrap

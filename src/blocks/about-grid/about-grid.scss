@@ -7,17 +7,14 @@
   gap: 90px;
   padding: 0 0 40px;
 
-  // stylelint-disable-next-line
   @media screen and (min-width: 681px) {
     padding: 40px 0;
   }
 
-  // stylelint-disable-next-line
   @media screen and (min-width: 768px) {
     padding: 40px 0;
   }
 
-  // stylelint-disable-next-line
   @media screen and (min-width: 1200px) {
     padding: 10px 0 50px;
   }
@@ -26,14 +23,12 @@
     display: grid;
     gap: 48px;
 
-    // stylelint-disable-next-line
     @media screen and (min-width: 768px) {
     	grid-template-columns: 1fr 1fr;
     }
   }
 
   &__item--reverse &__col {
-    // stylelint-disable-next-line
     @media screen and (min-width: 768px) {
       &:nth-child(1) {
         grid-column: 2/3;

@@ -1,0 +1,23 @@
+@use "../../scss/breakpoints";
+
+.breadcrumbs {
+  $block-name: &; // #{$block-name}__element
+
+  &__link {
+    span::after {
+      content: none;
+    }
+
+    &:hover span::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: #828997;
+      content: "";
+    }
+  }
+}

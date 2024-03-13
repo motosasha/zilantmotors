@@ -77,13 +77,13 @@ export function refactorCSS() {
   const fileList = [`src/scss/css/style.css`, `src/scss/css/media.css`];
   return (
     src(fileList, { sourcemaps: true })
-      .pipe(
-        postcss([
-          sortMediaQueries({
-            sort: config.strategy,
-          }),
-        ]),
-      )
+      // .pipe(
+      //   postcss([
+      //     sortMediaQueries({
+      //       sort: config.strategy,
+      //     }),
+      //   ]),
+      // )
       // .pipe(
       //   csso({
       //     restructure: true,

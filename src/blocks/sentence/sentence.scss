@@ -1,0 +1,66 @@
+@use "../../scss/breakpoints";
+
+.sentence {
+  $block-name: &; // #{$block-name}__element
+
+  padding: 0;
+
+  // stylelint-disable-next-line
+  .price__from {
+    margin-top: 2px;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 24px;
+    margin-top: 20px;
+
+    @media screen and (min-width: 576px) {
+      & {
+        grid-template-columns: repeat(2, calc(50% - 12px));
+        margin-top: 30px;
+      }
+    }
+
+    @media screen and (min-width: 992px) {
+      & {
+        grid-template-columns: repeat(3, calc(33.3333% - 16px));
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      & {
+        grid-template-columns: repeat(4, calc(25% - 18px));
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+
+  &__box {
+    flex-shrink: 0;
+    max-width: none;
+    padding: 0;
+  }
+
+  &__cart--box:first-child {
+    margin-bottom: 0.9375em;
+  }
+
+  &__cart--info {
+    padding: 1.25em;
+  }
+
+  &__cart--title {
+    height: auto;
+    margin-bottom: 3px;
+  }
+
+  &__cart--subname {
+    min-height: auto;
+  }
+}
