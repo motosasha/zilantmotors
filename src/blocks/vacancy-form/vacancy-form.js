@@ -3,6 +3,7 @@ import * as FilePond from "filepond";
 import FilePondPluginFileValidateSize from "filepond-plugin-file-validate-size";
 import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type";
 import JustValidate from "just-validate";
+import { vacancyFormAddress, vacancyFormConfig } from "../../js/variables.js";
 
 const ruDict = [
   {
@@ -49,8 +50,6 @@ ready(function () {
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
       ],
     });
-
-    // console.log(fileInput.getFile());
 
     const vacancyFormValidate = new JustValidate("#vacancyForm", undefined, ruDict);
 
@@ -114,6 +113,21 @@ ready(function () {
           rule: "required",
           errorMessage: "Value is required",
         },
-      ]);
+      ])
+      .onSuccess(() => {
+        const formData = new FormData(vacancyForm);
+        const pondFiles = fileInput.getFiles();
+        for (let i = 0; i < pondFiles.length; i++) {
+          formData.append("vacancyFile", pondFiles[i].file);
+        }
+        const plainFormData = Object.fromEntries(formData.entries());
+        fetch(vacancyFormAddress, vacancyFormConfig(plainFormData)).then((response) => {
+          if (response.ok) {
+            alert("success");
+          } else {
+            alert("error");
+          }
+        });
+      });
   }
 });
