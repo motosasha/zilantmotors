@@ -30,15 +30,11 @@ const ruDict = [
 ];
 
 ready(function () {
-  const modals = new HystModal({
+  window.modals = new HystModal({
     linkAttributeName: "data-hystmodal",
     catchFocus: true,
     closeOnEsc: true,
   });
-
-  window.thanks = function () {
-    modals.open("#thanks");
-  };
 
   const askForPriceForm = document.querySelector("#askForPriceForm");
   const leasingCalcForm = document.querySelector("#leasingCalcForm");
@@ -47,43 +43,43 @@ ready(function () {
     const askForPriceFormValidate = new JustValidate("#askForPriceForm", undefined, ruDict);
     askForPriceFormValidate.setCurrentLocale("ru");
     askForPriceFormValidate
-    .addField("#afpName", [
-      {
-        rule: "required",
-        errorMessage: "Value is required",
-      },
-      {
-        rule: "minLength",
-        value: 3,
-        errorMessage: "Value is too short",
-      },
-      {
-        rule: "maxLength",
-        value: 50,
-        errorMessage: "Value is too long",
-      },
-    ])
-    .addField("#afpEmail", [
-      {
-        rule: "required",
-        errorMessage: "Value is required",
-      },
-      {
-        rule: "email",
-        errorMessage: "Value is incorrect",
-      },
-    ])
-    .addField("#afpPhone", [
-      {
-        rule: "required",
-        errorMessage: "Value is required",
-      },
-      {
-        rule: "customRegexp",
-        value: /^(\+7)[\s-]([0-9]{3})[\s-][0-9]{3}-[0-9]{2}-[0-9]{2}/gi,
-        errorMessage: "Value is incorrect",
-      },
-    ]);
+      .addField("#afpName", [
+        {
+          rule: "required",
+          errorMessage: "Value is required",
+        },
+        {
+          rule: "minLength",
+          value: 3,
+          errorMessage: "Value is too short",
+        },
+        {
+          rule: "maxLength",
+          value: 50,
+          errorMessage: "Value is too long",
+        },
+      ])
+      .addField("#afpEmail", [
+        {
+          rule: "required",
+          errorMessage: "Value is required",
+        },
+        {
+          rule: "email",
+          errorMessage: "Value is incorrect",
+        },
+      ])
+      .addField("#afpPhone", [
+        {
+          rule: "required",
+          errorMessage: "Value is required",
+        },
+        {
+          rule: "customRegexp",
+          value: /^(\+7)[\s-]([0-9]{3})[\s-][0-9]{3}-[0-9]{2}-[0-9]{2}/gi,
+          errorMessage: "Value is incorrect",
+        },
+      ]);
   }
 
   if (leasingCalcForm) {

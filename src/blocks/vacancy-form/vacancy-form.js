@@ -38,6 +38,8 @@ ready(function () {
   if (vacancyForm) {
     const inputElement = document.querySelector('input[type="file"]');
 
+    window.FilePond = FilePond;
+
     FilePond.registerPlugin(FilePondPluginFileValidateSize);
     FilePond.registerPlugin(FilePondPluginFileValidateType);
 
