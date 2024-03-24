@@ -8,10 +8,13 @@ ready(function () {
   FilePond.registerPlugin(FilePondPluginFileValidateSize);
   FilePond.registerPlugin(FilePondPluginFileValidateType);
 
+  window.FilePonds = [];
+
   window.fileFields = document.querySelectorAll("input[type='file']");
   if (window.fileFields) {
     window.fileFields.forEach((field) => {
-      FilePond.create(field);
+      const fileInput = FilePond.create(field);
+      window.FilePonds.push(fileInput);
     });
   }
 });
