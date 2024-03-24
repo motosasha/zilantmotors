@@ -4,16 +4,14 @@ import FilePondPluginFileValidateSize from "filepond-plugin-file-validate-size";
 import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type";
 
 ready(function () {
-  const vacancyForm = document.querySelector("#vacancyForm");
+  window.FilePond = FilePond;
+  FilePond.registerPlugin(FilePondPluginFileValidateSize);
+  FilePond.registerPlugin(FilePondPluginFileValidateType);
 
-  if (vacancyForm) {
-    const inputElement = document.querySelector('input[type="file"]');
-
-    window.FilePond = FilePond;
-
-    FilePond.registerPlugin(FilePondPluginFileValidateSize);
-    FilePond.registerPlugin(FilePondPluginFileValidateType);
-
-    window.fileInput = FilePond.create(inputElement);
+  window.fileFields = document.querySelectorAll("input[type='file']");
+  if (window.fileFields) {
+    window.fileFields.forEach((field) => {
+      FilePond.create(field);
+    });
   }
 });
